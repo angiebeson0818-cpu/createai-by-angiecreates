@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap");
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Dark luxury fashion palette */
+    --background: 0.08 0.006 280;
+    --foreground: 0.96 0.008 85;
+    --card: 0.12 0.006 280;
+    --card-foreground: 0.96 0.008 85;
+    --popover: 0.14 0.006 280;
+    --popover-foreground: 0.96 0.008 85;
+    --primary: 0.78 0.12 85;
+    --primary-foreground: 0.08 0.006 280;
+    --secondary: 0.18 0.006 280;
+    --secondary-foreground: 0.96 0.008 85;
+    --muted: 0.16 0.006 280;
+    --muted-foreground: 0.55 0.008 85;
+    --accent: 0.78 0.12 85;
+    --accent-foreground: 0.08 0.006 280;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.96 0.008 85;
+    --border: 0.22 0.006 280;
+    --input: 0.22 0.006 280;
+    --ring: 0.78 0.12 85;
+    --chart-1: 0.78 0.12 85;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.1 0.006 280;
+    --sidebar-foreground: 0.96 0.008 85;
+    --sidebar-primary: 0.78 0.12 85;
+    --sidebar-primary-foreground: 0.08 0.006 280;
+    --sidebar-accent: 0.16 0.006 280;
+    --sidebar-accent-foreground: 0.96 0.008 85;
+    --sidebar-border: 0.22 0.006 280;
+    --sidebar-ring: 0.78 0.12 85;
+
+    /* Custom tokens */
+    --gold: 0.78 0.12 85;
+    --gold-dim: 0.65 0.1 85;
+    --gold-bright: 0.88 0.14 85;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Playfair Display", serif;
+  }
+
+  .font-body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+
+  .border-gold {
+    border-color: oklch(var(--gold));
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 20px oklch(var(--gold) / 0.3), 0 0 40px
+      oklch(var(--gold) / 0.1);
+  }
+
+  .gold-glow-hover:hover {
+    box-shadow: 0 0 30px oklch(var(--gold) / 0.4), 0 0 60px
+      oklch(var(--gold) / 0.15);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 0 30px oklch(var(--gold) / 0.2), 0 8px 32px rgba(0, 0, 0, 0.4);
+    border-color: oklch(var(--gold) / 0.5);
+  }
+
+  .gradient-text {
+    background: linear-gradient(
+      135deg,
+      oklch(0.88 0.14 85),
+      oklch(0.96 0.008 85),
+      oklch(0.78 0.12 85)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      oklch(0.08 0.006 280 / 0.95) 0%,
+      oklch(0.08 0.006 280 / 0.7) 50%,
+      oklch(0.08 0.006 280 / 0.3) 100%
+    );
+  }
+
+  .section-divider {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(var(--gold) / 0.5),
+      transparent
+    );
+    height: 1px;
+  }
+
+  /* ── CREATEai Onyx Shimmer ── */
+  @keyframes onyx-shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .onyx-shimmer {
+    background: linear-gradient(
+      110deg,
+      oklch(0.88 0.14 85) 0%,
+      oklch(0.96 0.008 85) 20%,
+      oklch(0.78 0.12 85) 40%,
+      oklch(0.55 0.008 85) 50%,
+      oklch(0.78 0.12 85) 60%,
+      oklch(0.96 0.008 85) 80%,
+      oklch(0.88 0.14 85) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: onyx-shimmer 3s linear infinite;
+  }
+
+  .onyx-shimmer-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .onyx-shimmer-border::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 0%,
+      oklch(0.88 0.14 85 / 0.15) 40%,
+      oklch(0.96 0.008 85 / 0.25) 50%,
+      oklch(0.88 0.14 85 / 0.15) 60%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: onyx-shimmer 2.5s linear infinite;
+    pointer-events: none;
+  }
+}
