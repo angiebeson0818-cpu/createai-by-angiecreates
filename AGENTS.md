@@ -25,4 +25,5 @@
 
 ## Learnings
 
-[No learnings yet]
+- `/watch` skill lives in `.claude/skills/watch` (MIT, Bradley Bonanno). Needs `ffmpeg` + `yt-dlp` (`pip install yt-dlp`). Use `--no-whisper` when no Groq/OpenAI key is set.
+- Noomo Agency inspo: their showreel is a direct MP4 on the homepage (`grep -oE 'https?://[^"]+\.mp4' ` on the fetched HTML), which `/watch` can frame-split.
