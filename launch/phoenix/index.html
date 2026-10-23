@@ -178,6 +178,9 @@ html.lightscene .ghost{background-image:linear-gradient(100deg,transparent,rgba(
 .links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}
 .links a{color:var(--ink-soft);text-decoration:none}
 .links a:hover{color:var(--gold-ink)}
+@media (min-width:761px){.block{padding-left:max(120px,env(safe-area-inset-left,0px));padding-right:max(170px,env(safe-area-inset-right,0px))}}
+.nav::before{content:"";position:absolute;inset:0 0 -40px;z-index:-1;background:linear-gradient(var(--halo),transparent);opacity:var(--navfade,0);transition:opacity .6s var(--ease);pointer-events:none}
+html.breathing .portrait{opacity:.15!important;filter:blur(6px);transition:opacity 1.4s var(--ease),filter 1.4s var(--ease)}
 @media (max-width:760px){.meet{grid-template-columns:1fr;justify-items:center}.meet .copy{text-align:center;justify-items:center}}
 .again{margin-top:8px;padding:14px 26px;border-color:var(--gold);font-size:.78rem;letter-spacing:.24em}
 .foot{position:relative;z-index:4;display:grid;justify-items:center;gap:10px;padding-block:14vh calc(110px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));text-align:center}
@@ -474,6 +477,7 @@ html.lightscene .ghost{background-image:linear-gradient(100deg,transparent,rgba(
       if (c >= tops[i]) s = i + p;
     });
     sceneS = s;
+    root.style.setProperty('--navfade', s > 5.2 ? 1 : 0);
     const idx = Math.min(secs.length - 1, Math.floor(s));
     railLinks.forEach(a => a.classList.toggle('on', a.dataset.to === '#' + secs[idx].id));
   }
