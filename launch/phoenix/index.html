@@ -86,7 +86,7 @@ body{background:var(--onyx);color:var(--ink);font-family:var(--body);font-weight
 html.lightscene .shine{background-image:linear-gradient(100deg,#6E5418,#A8862F 30%,#C9A84C 50%,#A8862F 70%,#6E5418)}
 @keyframes shimmer{to{background-position:-260% 0}}
 
-.rail{position:fixed;right:max(20px,calc(env(safe-area-inset-right,0px) + 20px));top:50%;transform:translateY(-50%);z-index:6;display:flex;flex-direction:column;gap:14px;list-style:none;margin:0;padding:0}
+.rail{position:fixed;right:max(36px,calc(env(safe-area-inset-right,0px) + 36px));top:50%;transform:translateY(-50%);z-index:6;display:flex;flex-direction:column;gap:14px;list-style:none;margin:0;padding:0}
 .rail a{display:flex;align-items:center;justify-content:flex-end;gap:10px;color:var(--ink-faint);text-decoration:none;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;transition:color .6s}
 .rail a::after{content:"";width:18px;height:1px;background:currentColor;transition:width .8s var(--ease)}
 .rail a.on{color:var(--gold-ink)}
